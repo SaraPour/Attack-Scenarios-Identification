@@ -1,0 +1,7 @@
+C:\Users\alirezade\source\repos\DfdConvertor\dfdquery\Publish1\dfdquery.exe
+C:\Users\alirezade\source\repos\DfdConvertor\dfdquery\Publish1\dfdquery.dll
+C:\Users\alirezade\source\repos\DfdConvertor\dfdquery\Publish1\dfdquery.deps.json
+C:\Users\alirezade\source\repos\DfdConvertor\dfdquery\Publish1\dfdquery.runtimeconfig.json
+C:\Users\alirezade\source\repos\DfdConvertor\dfdquery\Publish1\dfdquery.pdb
+C:\Users\alirezade\source\repos\DfdConvertor\dfdquery\Publish1\DFDAnalyzer.dll
+C:\Users\alirezade\source\repos\DfdConvertor\dfdquery\Publish1\DFDAnalyzer.pdb

@@ -1,0 +1,296 @@
+
+env byte networkDelay_SiteServer_SiteOperator = 1
+env byte networkDelay_FleetController_SiteServer = 1
+env byte networkDelay_RemoteController_HxRemoteOperator = 1
+env byte networkDelay_FleetController_RemoteController = 1
+env byte networkDelay_FleetController_HX01 = 1
+env byte networkDelay_RemoteController_HX01 = 1
+
+env int remoteControllingPeriod = 150;
+env byte remoteControlRequest = 100;
+env boolean acceptRequestConditions = true;
+env byte reactionDelay = 5;
+env byte RunCommandsDelay = 10;
+
+reactiveclass HxRemoteOperator(5){
+	knownrebecs{
+		RemoteController remoteController
+	}
+
+
+	statevars{
+		int selfStatus;
+		int selfCommand;
+		int selfUserId;
+	}
+
+
+	HxRemoteOperator(){
+		selfStatus = 0;
+		selfCommand = 0;
+		selfUserId = 0;
+
+		// TODO: You may change this secion by overriding auto-generated code
+	}
+
+
+	msgsrv recCurentStatusRcHro(int status){
+		selfStatus = status;
+	}
+
+	msgsrv recCommandDoneRcHro( ){
+	}
+
+	msgsrv senCommandHroRc(int command ,int userId){
+		remoteController.recCommandHroRc(int command ,int userId) after(networkDelay_HxRemoteOperator_RemoteController);
+	}
+
+	msgsrv senReturnControllHroRc( ){
+		remoteController.recReturnControllHroRc( ) after(networkDelay_HxRemoteOperator_RemoteController);
+	}
+
+}
+
+//******************************************************
+
+reactiveclass SiteServer(5){
+	knownrebecs{
+		SiteOperator siteOperator
+	}
+
+
+	statevars{
+		int selfStatus;
+	}
+
+
+	SiteServer(){
+		selfStatus = 0;
+
+		// TODO: You may change this secion by overriding auto-generated code
+	}
+
+
+	msgsrv senCurentStatusSsSo(int status){
+		siteOperator.recCurentStatusSsSo(int status) after(networkDelay_SiteServer_SiteOperator);
+	}
+
+	msgsrv recCurentStatusFcSs(int status){
+		selfStatus = status;
+	}
+
+}
+
+//******************************************************
+
+reactiveclass FleetController(5){
+	knownrebecs{
+		SiteServer siteServer
+		RemoteController remoteController
+		HX01 hX01
+	}
+
+
+	statevars{
+		int selfStatus;
+		int selfCommand;
+		int selfUserId;
+	}
+
+
+	FleetController(){
+		selfStatus = 0;
+		selfCommand = 0;
+		selfUserId = 0;
+
+		// TODO: You may change this secion by overriding auto-generated code
+	}
+
+
+	msgsrv senCurentStatusFcSs(int status){
+		siteServer.recCurentStatusFcSs(int status) after(networkDelay_FleetController_SiteServer);
+	}
+
+	msgsrv senKeepControllFcRc( ){
+		remoteController.recKeepControllFcRc( ) after(networkDelay_FleetController_RemoteController);
+	}
+
+	msgsrv senGrantControllFcRc( ){
+		remoteController.recGrantControllFcRc( ) after(networkDelay_FleetController_RemoteController);
+	}
+
+	msgsrv senCommandFcHx(int command, int userId){
+		hX01.recCommandFcHx(int command, int userId) after(networkDelay_FleetController_HX01);
+	}
+
+	msgsrv recCommandDoneHxFc( ){
+	}
+
+	msgsrv recCurentStatusRcFc(int status){
+		selfStatus = status;
+	}
+
+	msgsrv recTakeControlReqRcFc( ){
+	}
+
+	msgsrv recReturnControllRcFc( ){
+	}
+
+}
+
+//******************************************************
+
+reactiveclass RemoteController(5){
+	knownrebecs{
+		HxRemoteOperator hxRemoteOperator
+		HX01 hX01
+		FleetController fleetController
+	}
+
+
+	statevars{
+		int selfStatus;
+		int selfCommand;
+		int selfUserId;
+	}
+
+
+	RemoteController(){
+		selfStatus = 0;
+		selfCommand = 0;
+		selfUserId = 0;
+
+		// TODO: You may change this secion by overriding auto-generated code
+	}
+
+
+	msgsrv senCurentStatusRcHro(int status){
+		hxRemoteOperator.recCurentStatusRcHro(int status) after(networkDelay_RemoteController_HxRemoteOperator);
+	}
+
+	msgsrv recKeepControllFcRc( ){
+	}
+
+	msgsrv recGrantControllFcRc( ){
+	}
+
+	msgsrv senCommandRcHx(int command ,int userId){
+		hX01.recCommandRcHx(int command ,int userId) after(networkDelay_RemoteController_HX01);
+	}
+
+	msgsrv recCommandDoneHxRc(){
+	}
+
+	msgsrv senCurentStatusRcHx(int status){
+		hX01.recCurentStatusRcHx(int status) after(networkDelay_RemoteController_HX01);
+	}
+
+	msgsrv senCommandDoneRcHro( ){
+		hxRemoteOperator.recCommandDoneRcHro( ) after(networkDelay_RemoteController_HxRemoteOperator);
+	}
+
+	msgsrv senCurentStatusRcFc(int status){
+		fleetController.recCurentStatusRcFc(int status) after(networkDelay_RemoteController_FleetController);
+	}
+
+	msgsrv senTakeControlReqRcFc( ){
+		fleetController.recTakeControlReqRcFc( ) after(networkDelay_RemoteController_FleetController);
+	}
+
+	msgsrv senReturnControllRcFc( ){
+		fleetController.recReturnControllRcFc( ) after(networkDelay_RemoteController_FleetController);
+	}
+
+	msgsrv recCommandHroRc(int command ,int userId){
+		selfCommand = command;
+		selfUserId = userId;
+	}
+
+	msgsrv recReturnControllHroRc( ){
+	}
+
+}
+
+//******************************************************
+
+reactiveclass HX01(5){
+	knownrebecs{
+		RemoteController remoteController
+		FleetController fleetController
+	}
+
+
+	statevars{
+		int selfCommand;
+		int selfUserId;
+		int selfStatus;
+	}
+
+
+	HX01(){
+		selfCommand = 0;
+		selfUserId = 0;
+		selfStatus = 0;
+
+		// TODO: You may change this secion by overriding auto-generated code
+	}
+
+
+	msgsrv recCommandFcHx(int command, int userId){
+		selfCommand = command;
+		selfUserId = userId;
+	}
+
+	msgsrv recCommandRcHx(int command ,int userId){
+		selfCommand = command;
+		selfUserId = userId;
+	}
+
+	msgsrv senCommandDoneHxRc(){
+		remoteController.recCommandDoneHxRc() after(networkDelay_HX01_RemoteController);
+	}
+
+	msgsrv recCurentStatusRcHx(int status){
+		selfStatus = status;
+	}
+
+	msgsrv senCommandDoneHxFc( ){
+		fleetController.recCommandDoneHxFc( ) after(networkDelay_HX01_FleetController);
+	}
+
+}
+
+//******************************************************
+
+reactiveclass SiteOperator(5){
+
+	statevars{
+		int selfStatus;
+	}
+
+
+	SiteOperator(){
+		selfStatus = 0;
+
+		// TODO: You may change this secion by overriding auto-generated code
+	}
+
+
+	msgsrv recCurentStatusSsSo(int status){
+		selfStatus = status;
+	}
+
+}
+
+//******************************************************
+
+
+
+main {
+	HxRemoteOperator hxRemoteOperator(remoteController):();
+	SiteServer siteServer(siteOperator):();
+	FleetController fleetController(siteServer,remoteController,hX01):();
+	RemoteController remoteController(hxRemoteOperator,hX01,fleetController):();
+	HX01 hX01(remoteController,fleetController):();
+	SiteOperator siteOperator():();
+}

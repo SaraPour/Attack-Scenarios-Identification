@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "dfdquery/1.0.0": {
+        "dependencies": {
+          "DFDAnalyzer": "1.0.0"
+        },
+        "runtime": {
+          "dfdquery.dll": {}
+        }
+      },
+      "DFDAnalyzer/1.0.0": {
+        "runtime": {
+          "DFDAnalyzer.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "dfdquery/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DFDAnalyzer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

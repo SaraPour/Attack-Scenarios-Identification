@@ -1,0 +1,3 @@
+C:\Users\alirezade\source\repos\DfdConvertor\dfdquery\Publish1\Mac\dfdquery.pdb
+C:\Users\alirezade\source\repos\DfdConvertor\dfdquery\Publish1\Mac\DFDAnalyzer.pdb
+C:\Users\alirezade\source\repos\DfdConvertor\dfdquery\Publish1\Mac\dfdquery

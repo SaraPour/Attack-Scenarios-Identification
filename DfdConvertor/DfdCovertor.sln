@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32516.85
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DFDAnalyzer", "DFDAnalyzer\DFDAnalyzer.csproj", "{8EB44859-2DAD-42AA-9297-8DCEFB274924}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test", "Test\Test.csproj", "{5BEC0667-8E5B-4DF4-B5E5-9180B9AA94AE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{ECBC05E4-C68A-4E46-B694-0BED180814EC}"
+	ProjectSection(SolutionItems) = preProject
+		Data\AttackListV11.csv = Data\AttackListV11.csv
+		Data\RemoteControlHxDFDV10.tm7 = Data\RemoteControlHxDFDV10.tm7
+		Data\RemoteControlHxDFDV13.tm7 = Data\RemoteControlHxDFDV13.tm7
+		Data\RemoteControlHxDFDV5.tm7 = Data\RemoteControlHxDFDV5.tm7
+		Data\RemoteControlHxDFDV9.tm7 = Data\RemoteControlHxDFDV9.tm7
+		Data\RemoteControllerHx_V10.rebeca = Data\RemoteControllerHx_V10.rebeca
+		Data\RemoteControllerHx_V9.rebeca = Data\RemoteControllerHx_V9.rebeca
+		Data\RemoteControllerHx_V9new.rebeca = Data\RemoteControllerHx_V9new.rebeca
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dfdquery", "dfdquery\dfdquery.csproj", "{5D687686-26D7-43E5-8FCD-9A13EC3335D6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8EB44859-2DAD-42AA-9297-8DCEFB274924}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EB44859-2DAD-42AA-9297-8DCEFB274924}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EB44859-2DAD-42AA-9297-8DCEFB274924}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EB44859-2DAD-42AA-9297-8DCEFB274924}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BEC0667-8E5B-4DF4-B5E5-9180B9AA94AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BEC0667-8E5B-4DF4-B5E5-9180B9AA94AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BEC0667-8E5B-4DF4-B5E5-9180B9AA94AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BEC0667-8E5B-4DF4-B5E5-9180B9AA94AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D687686-26D7-43E5-8FCD-9A13EC3335D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D687686-26D7-43E5-8FCD-9A13EC3335D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D687686-26D7-43E5-8FCD-9A13EC3335D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D687686-26D7-43E5-8FCD-9A13EC3335D6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4F8C6C00-D67A-454D-B080-B583DE1EBC35}
+	EndGlobalSection
+EndGlobal

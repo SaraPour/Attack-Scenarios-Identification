@@ -1,0 +1,3 @@
+C:\Users\alirezade\source\repos\DfdConvertor\Publish\Linux\dfdquery.pdb
+C:\Users\alirezade\source\repos\DfdConvertor\Publish\Linux\DFDAnalyzer.pdb
+C:\Users\alirezade\source\repos\DfdConvertor\Publish\Linux\dfdquery

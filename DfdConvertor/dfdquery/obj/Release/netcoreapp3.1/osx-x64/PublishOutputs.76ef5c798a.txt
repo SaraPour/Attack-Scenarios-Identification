@@ -1,0 +1,4 @@
+C:\Users\alirezade\source\repos\DfdCovertor\dfdquery\Publish\Mac\dfdquery.pdb
+C:\Users\alirezade\source\repos\DfdCovertor\dfdquery\Publish\Mac\DFDAnalyzer.pdb
+C:\Users\alirezade\source\repos\DfdCovertor\dfdquery\Publish\Mac\Helper.pdb
+C:\Users\alirezade\source\repos\DfdCovertor\dfdquery\Publish\Mac\dfdquery

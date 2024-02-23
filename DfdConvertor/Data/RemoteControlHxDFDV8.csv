@@ -1,0 +1,17 @@
+1,CurentStatusSsSo(int status),SiteServer,GE.P,SiteOperator,GE.EI
+2,CurentStatusFcSs(int status),FleetController,GE.P,SiteServer,GE.P
+3,CurentStatusRcHro(int status),RemoteController,GE.P,HxRemoteOperator,GE.EI
+4,KeepControllFcRc( ),FleetController,GE.P,RemoteController,GE.P
+5,GrantControllFcRc( ),FleetController,GE.P,RemoteController,GE.P
+6,CommandFcHx(int command; int userId),FleetController,GE.P,HX01,GE.P
+7,CommandRcHx(int command ;int userId),RemoteController,GE.P,HX01,GE.P
+8,CommandDoneHxRc(),HX01,GE.P,RemoteController,GE.P
+9,CurentStatusRcHx(int status),RemoteController,GE.P,HX01,GE.P
+10,CommandDoneHxFc( ),HX01,GE.P,FleetController,GE.P
+11,CommandDoneRcHro( ),RemoteController,GE.P,HxRemoteOperator,GE.EI
+12,CurentStatusRcFc(int status),RemoteController,GE.P,FleetController,GE.P
+13,TakeControlReqRcFc( ),RemoteController,GE.P,FleetController,GE.P
+14,ReturnControllRcFc( ),RemoteController,GE.P,FleetController,GE.P
+15,CommandHroRc(int command ;int userId),HxRemoteOperator,GE.EI,RemoteController,GE.P
+16,ReturnControllHroRc( ),HxRemoteOperator,GE.EI,RemoteController,GE.P
+17,GenericDataFlow(),FleetController,GE.P,FleetController,GE.P

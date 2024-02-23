@@ -1,0 +1,58 @@
+property{ 
+	define {
+	
+
+		fleetController_IsAuto = (fleetController.selfStatus == 1);
+		fleetController_IsRemote = (fleetController.selfStatus == 2);
+		
+		hx01_IsAuto = (hx01.selfStatus == 1);
+		hx01_IsRemote = (hx01.selfStatus == 2);
+		
+		remoteController_IsAuto = (remoteController.selfStatus == 1);
+		remoteController_IsRemote = (remoteController.selfStatus == 2);
+		
+		hxRemoteOperator_IsAuto = (hxRemoteOperator.selfStatus == 1);
+		hxRemoteOperator_IsRemote = (hxRemoteOperator.selfStatus == 2);
+		
+		siteServer_IsAuto = (siteServer.selfStatus == 1);
+		siteServer_IsRemote = (siteServer.selfStatus == 2);
+	
+		siteOperator_IsAuto = (siteOperator.selfStatus == 1);
+		siteOperator_IsRemote = (siteOperator.selfStatus == 2);		
+					
+	}
+	
+	 Assertion {
+	 	
+	 	//Assertion10 : (!(fleetController_IsAuto));
+	 	//Assertion20 : (!(fleetController_IsRemote));
+	 	//Assertion25 : (!(fleetController_IsRemote && hx01_IsAuto));
+	 	
+	 	
+	    //Assertion30 : (!(hx01_IsAuto));
+	 	//Assertion40 : (!(hx01_IsRemote));
+	 	
+	 	
+	 	//Assertion50 : (!(siteOperator_IsAuto && hx01_IsAuto));
+	 	//Assertion55 : (!(siteServer_IsRemote && hx01_IsRemote));
+	 	//Assertion60 : (!(siteServer_IsRemote && hx01_IsAuto)); // Not satisfied since the time will be calculated based on the RCFC + FcSS 
+	 	//Assertion65 : (!(siteServer_IsAuto && hx01_IsRemote)); //Satisfied
+	 	//Assertion80 : (!(siteServer_IsRemote && remoteController_IsAuto)); //Satisfied
+	 	//Assertion85 : (!(siteServer_IsRemote && fleetController_IsAuto)); // Satisfied
+	 	
+	 	
+	 	//Assertion70 : (!(siteServer_IsAuto && fleetController_IsRemote)); //Not Satisfied
+	 	//Assertion75 : (!(siteServer_IsAuto && remoteController_IsRemote)); //Not Satisfied
+	 	
+	 	
+	 	
+	 	
+
+			 
+	}
+}
+
+
+
+
+		

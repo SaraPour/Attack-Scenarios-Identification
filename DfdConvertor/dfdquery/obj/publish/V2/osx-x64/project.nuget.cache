@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "bp3HLrbNl2TOE/cpO9JAAinhlJBle5OoX+D9Qn25wxGBFgrHcKobspryUaM15biY09cOBdw8IwJ24a4mNCAPLA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\alirezade\\source\\repos\\DfdConvertor\\dfdquery\\dfdquery.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\alirezade\\.nuget\\packages\\microsoft.netcore.app.runtime.osx-x64\\3.1.25\\microsoft.netcore.app.runtime.osx-x64.3.1.25.nupkg.sha512",
+    "C:\\Users\\alirezade\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.osx-x64\\3.1.25\\microsoft.aspnetcore.app.runtime.osx-x64.3.1.25.nupkg.sha512",
+    "C:\\Users\\alirezade\\.nuget\\packages\\microsoft.netcore.app.host.osx-x64\\3.1.25\\microsoft.netcore.app.host.osx-x64.3.1.25.nupkg.sha512"
+  ],
+  "logs": []
+}
